@@ -1,0 +1,135 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Additive Synthesis Techniques</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m15445</md:content-id>
+  <md:title>Additive Synthesis Techniques</md:title>
+  <md:abstract>Additive synthesis creates complex sounds by adding together individual sinusoidal signals called "partials." In this module you will learn how to synthesize audio waveforms by designing the frequency and amplitude trajectories of the partials. LabVIEW programming techniques for additive synthesis will also be introduced in two examples.</md:abstract>
+  <md:uuid>073b0cec-74e1-41b8-838b-65d2a5c30a33</md:uuid>
+</metadata>
+<featured-links>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit below.
+       Changes to the links section in the source will not be saved. -->
+    <link-group type="supplemental">
+      <link url="http://cnx.org/content/m15430/latest/" strength="3">TripleDisplay front-panel indicator</link>
+    </link-group>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit above.
+       Changes to the links section in the source will not be saved. -->
+</featured-links>
+<content>
+
+<table id="labview_banner" frame="none" summary=""><tgroup cols="2">
+<colspec rowsep="0" colsep="0"/> <colspec colwidth="6in" rowsep="0" colsep="0"/>
+<tbody>
+  <row>
+    <entry morerows="3"><media id="id1164052965843" alt=""><image src="../../media/LabVIEWq.png" mime-type="image/png"/></media></entry>
+    <entry> This module refers to LabVIEW, a software development environment that features a graphical programming language.
+       Please see the <link document="m15428">LabVIEW QuickStart Guide</link> module for tutorials and documentation that will help you:</entry>
+  </row>
+  <row> <entry>• Apply LabVIEW to Audio Signal Processing </entry> </row>
+  <row> <entry>• Get started with LabVIEW</entry> </row>
+  <row> <entry>• Obtain a fully-functional evaluation edition of LabVIEW</entry> </row>
+</tbody>
+</tgroup>
+</table>
+
+
+<section id="sec1">
+<title>Overview</title>
+
+<para id="par2">
+<term>Additive synthesis</term> creates complex sounds by adding together individual sinusoidal signals called <term>partials</term>. The prerequisite module <link document="m15444">Additive Synthesis Concepts</link> reviews the main concepts of additive synthesis.
+In this module you will learn how to synthesize audio waveforms by designing the frequency and amplitude trajectories of the partials. Also, LabVIEW programming techniques for additive
+synthesis will be introduced in two examples.
+</para>
+
+</section>
+
+<section id="sec3">
+<title>Frequency and Amplitude Trajectory Design</title>
+
+<para id="par4">
+A <term>partial</term> is the fundamental building block of additive synthesis. A partial is a single sinusoidal component whose amplitude and frequency are each time-varying.
+The time-varying amplitude denoted
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>
+is called the <term>amplitude trajectory</term> and the time-varying frequency denoted 
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>
+is called the <term>frequency trajectory</term>. Additive synthesis requires the design of both trajectories for each partial; the partials are then summed together to
+create the sound.</para>
+
+<para id="par5">The screencast video of <link target-id="video-design"/> shows how to begin the design of a sound as a spectrogram plot, how to design the 
+amplitude trajectory first as an intensity (loudness) trajectory in "log space" using decibels, and how to design the frequency trajectory in 
+"log space" using octaves. Designing the partials in log space accounts for hearing perception which is logarithmic in both intensity and in frequency;
+refer to <link document="m15439">Perception of Sound</link> for a detailed treatment of this subject.
+</para>
+
+<figure id="video-design"><title><link url="https://youtu.be/dk3ahByK6YI" window="new">https://youtu.be/dk3ahByK6YI</link> (6:44)</title><media id="eip-idm366123760" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/dk3ahByK6YI?rel=0" autoplay="false" width="640" height="460"/></media>
+
+
+<caption>[video] Design of frequency and amplitude trajectories
+</caption></figure></section>
+
+<section id="sec7">
+<title>Example 1: Fractal Partials</title>
+
+<para id="par8">
+		In this first example, partials are created during a fixed time interval and then concatenated to create the overall sound. 
+		During the first 
+		time interval a single partial is created at a reference frequency. During the second time interval the partial's 
+		frequency linearly increases in "octave space" from the reference frequency to a frequency two octaves above 
+		the reference frequency. In the third interval the partial bifurcates into two partials, where one increases by an octave
+		and the other decreases by an octave. In the fourth interval, each of the two partials bifurcates again to make a total of 
+		four partials, each increasing or decreasing by half an octave. This behavior repeats in each subsequent time interval, doubling the 
+		number of partials, and halving the amount of frequency increase or decrease.</para>
+
+<para id="par9">The screencast video of <link target-id="video-genfnc"/> shows how the frequency trajectories are designed in "octave space", and then reviews the key LabVIEW
+programming techniques needed to implement this design. The video also includes an audio demonstration so you can hear the design of this "audible fractal."</para>
+
+<para id="par10"><media id="id1164057400850" alt=""><image src="../../media/LabVIEW.png" mime-type="image/png"/></media> The LabVIEW VI demonstrated within the video is available here: <link resource="genfnc.zip">genfnc.zip</link>.
+This VI requires installation of the <link document="m15430">TripleDisplay</link> front-panel indicator.
+</para>
+
+<figure id="video-genfnc"><title><link url="https://youtu.be/XW52BJS4KLI" window="new">https://youtu.be/XW52BJS4KLI</link> (3:11)</title><media id="eip-idm712307984" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/XW52BJS4KLI?rel=0" autoplay="false" width="640" height="460"/></media>
+
+<caption>[video] Design of the "audible fractal," LabVIEW implementation, and audio demonstration
+</caption></figure></section>
+
+<section id="sec12">
+<title>Example 2: Spectrogram Art</title>
+
+<para id="par13">
+The design of a sound using additive synthesis typically begins with a spectrogram representation of the desired sound. In this second example, straight line segments
+define the frequency trajectories of nine distinct partials that create a spectrum of a recognizable object, specifically, a cartoon drawing of
+an individual who is happy to be wearing a French beret.</para>
+
+<para id="par14">The screencast video of <link target-id="video-face"/> shows how the frequency trajectories are designed in "octave space" and specified according
+to the coordinates of the line segment endpoints. The design of the corresponding amplitude trajectories necessary to make the partials start and stop at the correct times
+is likewise discussed. Key LabVIEW programming techniques needed to implement this design and an audio demonstration are also presented.</para>
+
+<para id="par15"><media id="id1164054478329" alt=""><image src="../../media/LabVIEW.png" mime-type="image/png"/></media> The LabVIEW VI demonstrated within the video is available here: <link resource="face.zip">face.zip</link>.
+This VI requires installation of the <link document="m15430">TripleDisplay</link> front-panel indicator.
+</para>
+
+<figure id="video-face"><title><link url="https://youtu.be/xTxRxZnH1B0" window="new">https://youtu.be/xTxRxZnH1B0</link> (4:28)</title><media id="eip-idm465774928" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/xTxRxZnH1B0?rel=0" autoplay="false" width="640" height="460"/></media>
+
+
+<caption>[video] Design of the cartoon face, LabVIEW implementation, and audio demonstration
+</caption></figure></section>
+
+</content>
+</document>

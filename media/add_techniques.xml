@@ -1,0 +1,116 @@
+<!--title = Additive Synthesis Techniques
+-->
+
+<?xml version='1.0' standalone='yes' ?>
+<LVData>
+<Version>8.2</Version>
+
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Overview</Val> </String>
+
+<String> <Name>para</Name> <Val>
+{term}Additive synthesis{/term} creates complex sounds by adding together individual sinusoidal signals called {term}partials{/term}. The prerequisite module {cnxn document=&quot;m????&quot;}Additive Synthesis Concepts{/cnxn} reviews the main concepts of additive synthesis.
+In this module you will learn how to synthesize audio waveforms by designing the frequency and amplitude trajectories of the partials. LabVIEW programming techniques for additive
+synthesis will also be introduced in two examples.
+</Val> </String>
+
+
+<String> <Name>secend</Name> <Val></Val> </String>
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Frequency and Amplitude Trajectory Design</Val> </String>
+
+<String> <Name>para</Name> <Val>
+A {term}partial{/term} is the fundamental building block of additive synthesis. A partial is a single sinusoidal component whose amplitude and frequency are each time-varying.
+The time-varying amplitude denoted
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}a{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}
+is called the {term}amplitude trajectory{/term} and the time-varying frequency denoted 
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}f{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}
+is called the {term}frequency trajectory{/term}. Additive synthesis requires the design of both the trajectories for each partial; the partials are then summed together to
+create the sound.
+
+The screencast video of {cnxn target=&quot;video-design&quot;/} shows how to begin with the design of a sound as a spectrogram plot, how to design the 
+amplitude trajectory first as an intensity (loudness) trajectory in &quot;log space&quot; using decibels, and how to design the frequency trajectory in 
+&quot;log space&quot; using octaves. Designing the partials in log space accounts for the hearing perception which is logarithmic in both intensity and in frequency;
+refer to {cnxn document=&quot;m????&quot;}Perception of Sound{/cnxn} for a detailed treatment of this subject.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-design</Val> </String>
+<String> <Name>video name</Name> <Val>design</Val> </String>
+<String> <Name>webpage title</Name> <Val>Trajectory design</Val> </String>
+<String> <Name>caption</Name> <Val>Design of frequency and amplitude trajectories</Val> </String>
+</Cluster>
+
+
+
+<String> <Name>secend</Name> <Val></Val> </String>
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Example 1: Fractal Partials</Val> </String>
+
+<String> <Name>para</Name> <Val>
+In this first example, partials are created during a fixed time interval and then concatenated together to create the overall sound. During the first block of time
+a single partial is created at a reference frequency. During the second block of time the partial&apos;s frequency linearly increases (in &quot;octave space&quot;) from the reference
+frequency to a frequency two octaves above the reference frequency. During the third block of time the partial bifurcates into two partials, where one increases by an octave
+and the other decreases by an octave. In the fourth time block, each of the two partials bifurcates again to make a total of four partials, and increase or decrease by
+half an octave. This behavior repeats in each subsequent time block, doubling the number of partials, and halving the amount of frequency increase or decrease.
+
+The screencast video of {cnxn target=&quot;video-genfnc&quot;/} shows how the frequency trajectories are designed in &quot;octave space&quot;, and then reviews the key LabVIEW
+programming techniques needed to implement this design. The video also includes an audio demonstration so you can hear the design of this &quot;audible fractal.&quot;
+
+The code for the LabVIEW VI demonstrated within the video is available here: {link src=&quot;genfnc.zip&quot;}genfnc.zip{/link}.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-genfnc</Val> </String>
+<String> <Name>video name</Name> <Val>genfnc</Val> </String>
+<String> <Name>webpage title</Name> <Val>Example 1</Val> </String>
+<String> <Name>caption</Name> <Val>Design of the &quot;audible fractal,&quot; LabVIEW implementation, and audio demonstration</Val> </String>
+</Cluster>
+
+
+
+
+<String> <Name>secend</Name> <Val></Val> </String>
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Example 2: Spectrogram Art</Val> </String>
+
+<String> <Name>para</Name> <Val>
+The design of a sound using additive synthesis typically begins with a spectrogram representation of the desired sound. In this second example, straight line segments
+define the frequency trajectories of nine distinct partials so as to create a spectrum of a recognizable object, specifically, a cartoon drawing of
+an individual who is happy to be wearing a French beret.
+
+The screencast video of {cnxn target=&quot;video-face&quot;/} shows how the frequency trajectories are designed in &quot;octave space&quot; and specified according
+to the coordinates of the line segment endpoints. The design of the corresponding amplitude trajectories necessary to make the partials start and stop at the correct times
+is likewise discussed. The key LabVIEW programming techniques needed to implement this design and an audio demonstration are also presented.
+
+The code for the LabVIEW VI demonstrated within the video is available here: {link src=&quot;face.zip&quot;}face.zip{/link}.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-face</Val> </String>
+<String> <Name>video name</Name> <Val>face</Val> </String>
+<String> <Name>webpage title</Name> <Val>Trajectory design</Val> </String>
+<String> <Name>caption</Name><Val>Design of the cartoon face, LabVIEW implementation, and audio demonstration</Val> </String>
+</Cluster>
+
+
+
+<String> <Name>secend</Name> <Val></Val> </String>
+<!-------------------------------------------------------->
+</LVData>

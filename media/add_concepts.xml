@@ -1,0 +1,163 @@
+<!--title = Additive Synthesis Concepts
+-->
+
+<?xml version='1.0' standalone='yes' ?>
+<LVData>
+<Version>8.2</Version>
+
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Overview</Val> </String>
+
+<String> <Name>para</Name> <Val>
+{term}Additive synthesis{/term} creates complex sounds by adding together individual sinusoidal signals called {term}partials{/term}. A partial&apos;s frequency and amplitude are each time-varying functions, so a partial is a more flexible version of the {term}harmonic{/term} associated with a Fourier series decomposition of a periodic waveform.
+
+In this module you will learn about partials, how to model the timbre of natural insruments, various sources of control information for partials, and how to make a sinusoidal oscillator
+with an instantaneous frequency that varies with time.
+</Val> </String>
+
+<String> <Name>secend</Name> <Val></Val> </String>
+
+
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Partials</Val> </String>
+
+<String> <Name>para</Name> <Val>
+A {term}partial{/term} is a generalization of the {term}harmonic{/term} associated with a Fourier series representation of a periodic waveform. The screencast video of {cnxn target=&quot;video-partials&quot;/} introduces important concepts associated with partials.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-partials</Val> </String>
+<String> <Name>video name</Name> <Val>partials</Val> </String>
+<String> <Name>webpage title</Name> <Val>Partials</Val> </String>
+<String> <Name>caption</Name> <Val>Important concepts associated with {term}partials{/term}</Val> </String>
+</Cluster>
+
+<String> <Name>secend</Name> <Val></Val> </String>
+
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Modeling Timbre of Natural Instruments</Val> </String>
+
+<String> <Name>para</Name> <Val>
+Perception of an instrument&apos;s {term}timbre{/term} relies heavily on the attack transient of a note. Since partials can effectively enter and leave the signal at any time, additive synthesis is a good way to model physical instruments. The screencast video of {cnxn target=&quot;video-timbre&quot;/} discusses three important design requirements for partials to successfully model a physical instrument.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-timbre</Val> </String>
+<String> <Name>video name</Name> <Val>timbre</Val> </String>
+<String> <Name>webpage title</Name> <Val>Timbre and partials</Val> </String>
+<String> <Name>caption</Name> <Val>Three design requirements for partials to model physical instruments</Val> </String>
+</Cluster>
+
+<String> <Name>secend</Name> <Val></Val> </String>
+
+
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Sources of Control Information</Val> </String>
+
+<String> <Name>para</Name> <Val>
+The time-varying frequency of a partial is called its {term}frequency trajectory{/term}, and is best visualized a track or path on a spectrogram display. Similarly, the time-varying amplitude of a partial is called its {term}amplitude trajectory{/term}. Control information for these trajectories can be derived from a number of sources. Perhaps the most obvious source is a spectral analysis of a physical instrument to be modeled. The screencast video of {cnxn target=&quot;video-trumpet&quot;/} discusses this concept and demonstrates how a trumpet can be well-modeled by adding suitable partials. The code for the LabVIEW VI demonstrated within the video is available here: {link src=&quot;trumpet.zip&quot;}trumpet.zip{/link}.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-trumpet</Val> </String>
+<String> <Name>video name</Name> <Val>trumpet</Val> </String>
+<String> <Name>webpage title</Name> <Val>Trumpet partials</Val> </String>
+<String> <Name>caption</Name> <Val>Modeling a trumpet tone by adding together increasing numbers of partials</Val> </String>
+</Cluster>
+
+<String> <Name>para</Name> <Val>
+Control information can also be derived from other domains not necessarily related to music. The screencast video of {cnxn target=&quot;video-houston&quot;/} provides some examples of non-music control information, and illustrates how an edge boundary from an image can be &quot;auralized&quot; by translating the edge into a partial&apos;s frequency trajectory.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-houston</Val> </String>
+<String> <Name>video name</Name> <Val>houston</Val> </String>
+<String> <Name>webpage title</Name> <Val>Frequency trajectory of Houston</Val> </String>
+<String> <Name>caption</Name> <Val>Skyline of Houston translated into a frequency trajectory</Val> </String>
+</Cluster>
+
+<String> <Name>secend</Name> <Val></Val> </String>
+
+<!-------------------------------------------------------->
+<String> <Name>sec</Name> <Val>Instantaneous Frequency</Val> </String>
+
+<String> <Name>para</Name> <Val>
+The frequency trajectory of a partial is defined as a time-varying frequency
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}f{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}. 
+If a constant-frequency and constant-amplitude sinusoid is mathematically described as
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}y{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}{m:mo}={/m:mo}{m:mi}A{/m:mi}{m:mi}sin{/m:mi}{m:mo}&amp;#x2061;{/m:mo}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mn}2{/m:mn}{m:mi}&amp;#x03C0;{/m:mi}{m:msub}
+    {m:mi}f{/m:mi}
+    {m:mn}0{/m:mn}
+   {/m:msub}
+   {m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}
+, intuition perhaps suggests that the partial should be expressed as
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}y{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}{m:mo}={/m:mo}{m:mi}a{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}{m:mi}sin{/m:mi}{m:mo}&amp;#x2061;{/m:mo}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mn}2{/m:mn}{m:mi}&amp;#x03C0;{/m:mi}{m:mi}f{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}
+, where
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}a{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}
+is the amplitude trajectory. However, as shown in the screencast video of 
+{cnxn target=&quot;video-instant&quot;/} this intuitive result is incorrect; the video derives the correct equation to describe a partial in terms of its trajectories
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}f{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}
+and
+{m:math}
+ {m:semantics}
+  {m:mrow}
+   {m:mi}a{/m:mi}{m:mo stretchy=&apos;false&apos;}({/m:mo}{m:mi}t{/m:mi}{m:mo stretchy=&apos;false&apos;}){/m:mo}
+  {/m:mrow}
+ {m:annotation encoding=&apos;MathType-MTEF&apos;}
+ {/m:annotation}
+ {/m:semantics}
+{/m:math}
+.
+</Val> </String>
+
+<Cluster> <Name>video</Name> <NumElts>4</NumElts>
+<String> <Name>ID (optional)</Name> <Val>video-instant</Val> </String>
+<String> <Name>video name</Name> <Val>instant</Val> </String>
+<String> <Name>webpage title</Name> <Val>Instantaneous frequency</Val> </String>
+<String> <Name>caption</Name> <Val>Derivation of the equation of a partial given its frequency and amplitude trajectories</Val> </String>
+</Cluster>
+
+<String> <Name>secend</Name> <Val></Val> </String>
+<!-------------------------------------------------------->
+
+</LVData>

@@ -1,0 +1,171 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Additive Synthesis Concepts</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m15444</md:content-id>
+  <md:title>Additive Synthesis Concepts</md:title>
+  <md:abstract>Additive synthesis creates complex sounds by adding together individual sinusoidal signals called partials. A partial's frequency and amplitude are each time-varying functions, so a partial is a more flexible version of the harmonic associated with a Fourier series decomposition of a periodic waveform. In this module you will learn about partials, how to model the timbre of natural instruments, various sources of control information for partials, and how to make a sinusoidal oscillator with an instantaneous frequency that varies with time.</md:abstract>
+  <md:uuid>2d4ebd36-2861-4456-bed4-cd19456cd7b2</md:uuid>
+</metadata>
+
+<content>
+
+<table id="labview_banner" frame="none" summary=""><tgroup cols="2">
+<colspec rowsep="0" colsep="0"/> <colspec colwidth="6in" rowsep="0" colsep="0"/>
+<tbody>
+  <row>
+    <entry morerows="3"><media id="idp550752" alt=""><image src="../../media/LabVIEWq.png" mime-type="image/png"/></media></entry>
+    <entry> This module refers to LabVIEW, a software development environment that features a graphical programming language.
+       Please see the <link document="m15428">LabVIEW QuickStart Guide</link> module for tutorials and documentation that will help you:</entry>
+  </row>
+  <row> <entry>• Apply LabVIEW to Audio Signal Processing </entry> </row>
+  <row> <entry>• Get started with LabVIEW</entry> </row>
+  <row> <entry>• Obtain a fully-functional evaluation edition of LabVIEW</entry> </row>
+</tbody>
+</tgroup>
+</table>
+
+
+<section id="sec1">
+<title>Overview</title>
+
+<para id="par2">
+<term>Additive synthesis</term> creates complex sounds by adding together individual sinusoidal signals called <term>partials</term>. A partial's frequency and amplitude are each time-varying functions, so a partial is a more flexible version of the <term>harmonic</term> associated with a Fourier series decomposition of a periodic waveform.</para>
+
+<para id="par3">In this module you will learn about partials, how to model the timbre of natural instruments, various sources of control information for partials, and how to make a sinusoidal oscillator
+with an instantaneous frequency that varies with time.
+</para>
+
+</section>
+
+<section id="sec4">
+<title>Partials</title>
+
+<para id="par5">
+A <term>partial</term> is a generalization of the <term>harmonic</term> associated with a Fourier series representation of a periodic waveform. The screencast video of <link target-id="video-partials"/> introduces important concepts associated with partials.
+</para>
+
+<figure id="video-partials"><title><link url="https://youtu.be/AoZYPb-j_kE" window="new">https://youtu.be/AoZYPb-j_kE</link> (1:34)</title><media id="eip-idm245083712" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/AoZYPb-j_kE?rel=0" autoplay="false" width="640" height="460"/></media>
+
+
+<caption>[video] Important concepts associated with <term>partials</term>
+</caption></figure></section>
+
+<section id="sec7">
+<title>Modeling Timbre of Natural Instruments</title>
+
+<para id="par8">
+Perception of an instrument's <term>timbre</term> relies heavily on the attack transient of a note. Since partials can effectively enter and leave the signal at any time, additive synthesis is a good way to model physical instruments. The screencast video of <link target-id="video-timbre"/> discusses three important design requirements for partials necessary to successfully model a physical instrument.
+</para>
+
+<figure id="video-timbre"><title><link url="https://youtu.be/UOvSXVrsycg" window="new">https://youtu.be/UOvSXVrsycg</link> (1:07)</title><media id="eip-idm430834224" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/UOvSXVrsycg?rel=0" autoplay="false" width="640" height="460"/></media>
+
+
+<caption>[video] Three design requirements for partials to model physical instruments
+</caption></figure></section>
+
+<section id="sec10">
+<title>Sources of Control Information</title>
+
+<para id="par11">
+		The time-varying frequency of a partial is called its <term>frequency trajectory</term>, and is best visualized as a track or path on a spectrogram display. Similarly, the time-varying amplitude of a partial is called its <term>amplitude trajectory</term>. Control information for these trajectories can be derived from a number of sources. Perhaps the most obvious source is a spectral analysis of a physical instrument to be modeled. The screencast video of <link target-id="video-trumpet"/> discusses this concept and demonstrates how a trumpet can be well-modeled by adding suitable partials. 
+</para>
+
+<para id="par12">
+		<media id="idm12059040" alt=""><image src="../../media/LabVIEW.png" mime-type="image/png"/></media> The code for the LabVIEW VI demonstrated within the video is available here: <link resource="trumpet.zip">trumpet.zip</link>. 
+		This VI requires installation of the <link document="m15430">TripleDisplay</link> front-panel indicator.
+</para>
+
+<figure id="video-trumpet"><title><link url="https://youtu.be/wJU6C-v40Gc" window="new">https://youtu.be/wJU6C-v40Gc</link> (2:44)</title><media id="eip-idm290560880" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/wJU6C-v40Gc?rel=0" autoplay="false" width="640" height="460"/></media>
+
+
+<caption>[video] Modeling a trumpet tone by adding together increasing numbers of partials
+</caption></figure><para id="par14">
+Control information can also be derived from other domains not necessarily related to music. The screencast video of <link target-id="video-houston"/> provides some examples of non-music control information, and illustrates how an edge boundary from an image can be "auralized" by translating the edge into a partial's frequency trajectory.
+</para>
+
+<figure id="video-houston"><title><link url="https://youtu.be/4_Y9-2Xuljk" window="new">https://youtu.be/4_Y9-2Xuljk</link> (1:31)</title><media id="eip-idm355384016" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/4_Y9-2Xuljk?rel=0" autoplay="false" width="640" height="460"/></media>
+
+
+<caption>[video] Skyline of Houston translated into a frequency trajectory
+</caption></figure></section>
+
+<section id="sec16">
+<title>Instantaneous Frequency</title>
+
+<para id="par17">
+The frequency trajectory of a partial is defined as a time-varying frequency
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>. 
+Since a constant-frequency and constant-amplitude sinusoid is mathematically described as
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>y</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>A</m:mi><m:mi>sin</m:mi><m:mo>⁡</m:mo><m:mo stretchy="false">(</m:mo><m:mn>2</m:mn><m:mi>π</m:mi><m:msub>
+    <m:mi>f</m:mi>
+    <m:mn>0</m:mn>
+   </m:msub>
+   <m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>
+, intuition perhaps suggests that the partial should be expressed as
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>y</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo><m:mi>sin</m:mi><m:mo>⁡</m:mo><m:mo stretchy="false">(</m:mo><m:mn>2</m:mn><m:mi>π</m:mi><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>
+, where
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>
+is the amplitude trajectory. However, as shown in the screencast video of 
+<link target-id="video-instant"/> this intuitive result is incorrect; the video derives the correct equation to describe a partial in terms of its trajectories
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>
+and
+<m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+  </m:mrow>
+ <m:annotation encoding="MathType-MTEF">
+ </m:annotation>
+ </m:semantics>
+</m:math>
+.
+</para>
+
+<figure id="video-instant"><title><link url="https://youtu.be/FXspKPXvpB8" window="new">https://youtu.be/FXspKPXvpB8</link> (2:55)</title><media id="eip-idm1612216256" display="block" alt="Insert alt text here"><video mime-type="video/mpeg" src="https://www.youtube.com/embed/FXspKPXvpB8?rel=0" autoplay="false" width="640" height="460"/></media>
+
+
+<caption>[video] Derivation of the equation of a partial given its frequency and amplitude trajectories
+</caption></figure></section>
+
+</content>
+</document>

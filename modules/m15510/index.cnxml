@@ -1,0 +1,422 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Musical Signal Processing with LabVIEW</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m15510</md:content-id>
+  <md:title>Musical Signal Processing with LabVIEW</md:title>
+  <md:abstract>"Musical Signal Processing with LabVIEW," a multimedia educational resource for students and faculty, augments traditional DSP courses and supports dedicated courses in music synthesis and audio signal processing. Each of the learning modules blends video, text, sound clips, and LabVIEW virtual instruments (VIs) into explanation of theory and concepts, demonstration of LabVIEW implementation techniques to transform theory into working systems, and hands-on guided project activities. Screencasts -- videos captured directly from the computer screen with audio narration and a hallmark of this resource -- use a mixture of hand-drawn text, animations, and video of the LabVIEW tool in operation to provide a visually rich learning environment.</md:abstract>
+  <md:uuid>18005ea2-b457-42c1-89c9-79ed1d57b73f</md:uuid>
+</metadata>
+
+<content>
+
+<table id="labview_banner" frame="none" summary=""><tgroup cols="2">
+<colspec rowsep="0" colsep="0"/> <colspec colwidth="6in" rowsep="0" colsep="0"/>
+<tbody>
+  <row>
+    <entry morerows="3"><media id="id1164049275881" alt=""><image src="../../media/LabVIEWq.png" mime-type="image/png"/></media></entry>
+    <entry> This module refers to LabVIEW, a software development environment that features a graphical programming language.
+       Please see the <link document="m15428">LabVIEW QuickStart Guide</link> module for tutorials and documentation that will help you:</entry>
+  </row>
+  <row> <entry>• Apply LabVIEW to Audio Signal Processing </entry> </row>
+  <row> <entry>• Get started with LabVIEW</entry> </row>
+  <row> <entry>• Obtain a fully-functional evaluation edition of LabVIEW</entry> </row>
+</tbody>
+</tgroup>
+</table>
+
+
+<section id="sec1">
+<title>Introduction</title>
+
+<para id="par2">
+		Music synthesis and audio signal processing apply digital signal processing (DSP) concepts
+		to create and control sound and to apply interesting special effects to musical signals.
+		As you implement and experiment with synthesis and filtering algorithms, you develop a deeper 
+		understanding of the inter-relationships between a physical sound, its visual 
+		representations such as time-domain waveform and spectrogram, and its mathematical model.</para>
+
+<para id="par3">		Richard Hamming once said "the purpose of computing is insight, not numbers," and you gain 
+		manifold insights when you interact with a signal processing system that you created yourself.
+		The LabVIEW Development Environment by National Instruments Corporation is an excellent tool
+		you can use to convert mathematical algorithms into real time interactive 
+		music synthesizers and audio signal processors. The unique graphical dataflow programming environment
+		of LabVIEW allows DSP elements such as signal generators, filters, and other mathematical operators
+		to be placed and interconnected as a block diagram. Placing user controls and indicators on the
+		block diagram automatically generates an interactive graphical user interface (GUI) front-panel display,
+		dramatically reducing the development effort needed to make an interactive application.</para>
+
+<para id="par4">		<term>Musical Signal Processing with LabVIEW</term>, a multimedia educational resource for students and faculty,
+		augments traditional DSP courses and supports dedicated courses in music synthesis and audio signal processing.
+		Each of the learning modules blends video, text, sound clips, and LabVIEW <term>virtual instruments (VIs)</term> 
+		into explanation of theory and concepts, demonstration of LabVIEW implementation techniques to transform theory into working systems,
+		and hands-on guided project activities. <term>Screencasts</term> -- videos captured directly from the computer screen
+		with audio narration and a hallmark of this resource -- use a mixture of hand-drawn text, 
+		animations, and video of the LabVIEW tool in operation to provide a visually rich learning environment.
+</para>
+
+</section>
+
+<section id="sec5">
+<title>Learning Module Collections</title>
+
+<list id="list6" list-type="bulleted">
+
+<item> <link document="col10440">LabVIEW Programming Techniques for Audio Signal Processing</link> -- 
+			After completing this course you will be well-equipped to start creating your own audio and signal processing applications 
+			within the LabVIEW development environment. The course includes a "Getting Started" tutorial, editing tips, essential programming 
+			structures, subVIs, arrays, audio sources, audio output to the soundcard, reading and writing audio files, and real-time audio 
+			output with interactive parameter control.
+	 </item>
+<item> <link document="col10481">Introduction to Audio and Musical Signals</link> -- 
+			Learn about human perception of sound, including pitch and frequency, intensity and amplitude, harmonics, and tuning systems. 
+			The treatment of these concepts is oriented to the creation of music synthesis algorithms. A hands-on project investigates the 
+			specific choice of frequencies for the tuning system called "equal temperament," the most common tuning system for Western music.
+	 </item>
+<item> <link document="col10480">Analog Synthesis and Modular Synthesizers</link> -- 
+			Analog modular synthesizers popular in the 1960s and 1970s produce sound with electronic devices such as oscillators, 
+			amplifiers, filters, and envelope generators linked together by cables. A specific cable configuration (or "patch") 
+			produces a distinct sound controlled by a keyboard or sequencer. While digital synthesis has largely replaced analog 
+			synthesizers, the concepts and techniques of analog synthesis still serve as the basis for many types of synthesis 
+			algorithms. Learn about modular synthesizers and use LabVIEW to compose a piece of music by emulating an analog synthesizer.
+	 </item>
+<item> <link document="col10487">MIDI for Synthesis and Algorithm Control</link> -- 
+			The Musical Instrument Digital Interface (MIDI) standard specifies how to convey performance control information 
+			between synthesizer equipment and computers. Standard MIDI files (.mid extension) include timing information with 
+			MIDI messages to embody a complete musical performance. Learn about the MIDI standard, discover useful MIDI-related 
+			software utilities, and learn how to use LabVIEW to create a standard MIDI file according to your own design that 
+			can be played by any media appliance. Also learn about "MIDI JamSession," a LabVIEW application VI that 
+			renders standard MIDI files to audio using "virtual musical instruments" of your own design.
+	 </item>
+<item> <link document="col10482">Tremolo and Vibrato Effects (Low-Frequency Modulation)</link> -- 
+			Tremolo and vibrato add interest to the sound of musical instruments and the singing voice. Tremolo is a low-frequency 
+			variation in amplitude, while vibrato is a low-frequency variation in frequency. Learn how to model each of these 
+			effects mathematically, and discover how to implement these effects in LabVIEW.
+	 </item>
+<item> <link document="col10483">Modulation Synthesis</link> -- 
+			Amplitude modulation (AM) and frequency modulation (FM) are familiar types of communications systems. When the 
+			modulating frequency is in the audio range, AM (also called ring modulation) produces interesting special effects by shifting 
+			the source signal spectrum, and can be used to raise or lower the pitch of an instrument or voice. FM creates rich, 
+			time-varying spectra that can be designed to emulate the sound of many different musical instruments. Learn about 
+			the mathematics of AM and FM, and learn how to implement these modulation schemes as audio signal processors and music synthesizers in LabVIEW.
+	 </item>
+<item> <link document="col10479">Additive Synthesis</link> -- 
+			Additive synthesis creates complex sounds by adding together individual sinusoidal signals called partials. 
+			A partial's frequency and amplitude are each time-varying functions, so a partial is a more flexible version of 
+			the harmonic associated with a Fourier series decomposition of a periodic waveform. Learn about partials, 
+			how to model the timbre of natural instruments, various sources of control information for partials, and 
+			how to make a sinusoidal oscillator with an instantaneous frequency that varies with time.
+	 </item>
+<item> <link document="col10484">Subtractive Synthesis</link> -- 
+			Most musical instruments as well as the human voice create sound by exciting a resonant structure or cavity by a wideband 
+			pulsed source. The resonant structure amplifies select frequency bands (called formants) and suppresses (or "subtracts") others. 
+			Subtractive synthesis algorithms use time-varying sources and time-varying digital filters to model physical instruments. 
+			Learn how to use the DSP capabilities of LabVIEW to implement an interactive time-varying filter, a band-limited wideband 
+			source, a vowel synthesizer for speech, a "cross synthesizer" in which a speech signal's spectral envelope is 
+			superimposed on a musical signal, and a remarkably life-like plucked string sound.
+	 </item>
+<item> <link document="col10485">Sound Spatialization and Reverberation</link> -- 
+			Reverberation is a property of concert halls that greatly adds to the enjoyment of a musical performance. 
+			Sound waves propagate directly from the stage to the listener, and also reflect from the floor, walls, ceiling, and 
+			back wall of the stage to create myriad copies of the direct sound that are time-delayed and reduced in intensity. 
+			Learn how to model a reverberant environment using comb filters and all-pass filters, and how to implement these digital 
+			filters in LabVIEW to create an audio signal processor that can add reverberation an audio signal. 
+			In addition, learn how to place a virtual sound source in a stereo sound field using interaural intensity difference (IID) 
+			and interaural timing difference (ITD) localization cues.
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec7">
+<title>Learning Module Descriptions</title>
+
+<section id="sec8">
+<title>LabVIEW Programming Techniques for Audio Signal Processing</title>
+
+<list id="list9" list-type="bulleted">
+
+<item> <link document="m14764">Getting Started with LabVIEW</link> -- Learn about the 
+			LabVIEW programming environment, create your first virtual instrument (VI), learn about LabVIEW's graphical dataflow 
+			programming paradigm, become acquainted with some of LabVIEW's data types, and review some useful debugging techniques.
+	 </item>
+<item> <link document="m14765">Editing Tips for LabVIEW</link> -- Learn how to efficiently create 
+			and edit LabVIEW block diagrams and front panels.
+	 </item>
+<item> <link document="m14766">Essential Programming Structures in LabVIEW</link> -- 
+			Learn how to work with LabVIEW's essential programming structures such as for-loops, while-loops, case structure, 
+			MathScript node, and diagram disable.  
+	 </item>
+<item> <link document="m14767">Create a SubVI in LabVIEW</link> -- 
+			A <term>subVI</term> is equivalent to a function, subroutine, or method in other programming languages, and useful for 
+			encapsulating code that will be reused multiple time. A subVI is also used to develop hierarchical programs.
+	 </item>
+<item> <link document="m14768">Arrays in LabVIEW</link> -- 
+			Learn how to create and manipulate arrays, perform mathematical operations on them, and use spreadsheets to read and 
+			write arrays to the file system.
+	 </item>
+<item> <link document="m14769">Audio Output Using LabVIEW's "Play Waveform" Express VI</link> -- 
+			Learn how to play an audio signal (1-D array) using your computer's soundcard.
+	 </item>
+<item> <link document="m14770">Audio Sources in LabVIEW</link> -- 
+			Learn how to use the 'Sine Wave' subVI from the Signal Processing palette as an audio source.
+	 </item>
+<item> <link document="m14771">Reading and Writing Audio Files in LabVIEW</link> -- 
+			Learn how to use LabVIEW to retrieve an audio signal from a WAV-format file, and how to save an audio signal that you 
+			have created to a WAV-format file.
+	 </item>
+<item> <link document="m14772">Real-Time Audio Output in LabVIEW</link> -- 
+			Learn how to set up the framework for your own LabVIEW application that can generate continuous audio output and respond 
+			to changes on the front panel in real time.
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec10">
+<title>Introduction to Audio and Musical Signals</title>
+
+<list id="list11" list-type="bulleted"><item> <link document="m15439">Perception of Sound</link> --
+			A basic understanding of human perception of sound is vital if you wish to design music synthesis algorithms to achieve your goals. 
+			In this module, learn about pitch and frequency, intensity and amplitude, harmonics, and tuning systems. The treatment of these concepts 
+			is oriented to the creation of music synthesis algorithms.
+	 </item>
+<item> <link document="m15440">Mini-Project: Musical Intervals and the Equal-Tempered Scale</link> -- 
+			Learn about musical intervals, and discover the reason behind the choice of frequencies for the tuning system called "equal temperament."
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec12">
+<title>Analog Synthesis and Modular Synthesizers</title>
+
+<list id="list13" list-type="bulleted">
+
+<item> <link document="m15442">Analog Synthesis Modules</link> --
+			Learn about analog synthesizer modules, the foundation for synthesizers based on analog electronics technology. 
+			While analog synthesis has largely been replaced by digital techniques, the concepts associated with analog modular synthesis 
+			(oscillators, amplifiers, envelope generators, and patches) still form the basis for many digital synthesis algorithms.
+	 </item>
+<item> <link document="m15443">Mini-Project: Compose a Piece of Music Using Analog Synthesizer Techniques</link> -- 
+			Design sounds in LabVIEW using analog synthesis techniques. You will create two subVIs: one to implement an ADSR-style envelope 
+			generator and the other to create a multi-voice sound source. You will then create a top-level application VI to 
+			render a simple musical composition as an audio file.
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec14">
+<title>MIDI for Synthesis and Algorithm Control</title>
+
+<list id="list15" list-type="bulleted">
+
+<item> <link document="m15049">MIDI Messages</link> --
+			Basic MIDI messages include those that produce sound, select voices, and vary a sound in progress, such as pitch bending. 
+			In this module, learn about the most common types of MIDI messages at the byte level, including: Note-On, Note-Off, 
+			Program Change, Control Change, Bank Select, Pitch Wheel, and Syste-Exclusive. The General MIDI (GM) standard sound set is also introduced.
+	 </item>
+<item> <link document="m15051">Standard MIDI Files</link> -- 
+			A complete musical performance can be recorded by sequencing software, which saves individual MIDI messages generated by a 
+			synthesizer and measures the time interval between them. The messages and timing information is stored in a 
+			standard MIDI file, a binary-format file designed to maximize flexibility and minimize file size. In this module, learn how to 
+			understand the structure of a standard MIDI file at the byte level.
+	 </item>
+<item> <link document="m14879">Useful MIDI Software Utilities</link> -- 
+			Freeware MIDI-related software utilities abound on the Internet; especially useful utilities are introduced here. 
+			Each section includes a screencast video to illustrate how to use the utility.  
+	 </item>
+<item> <link document="m15052">Mini-Project: Parse and Analyze a Standard MIDI File</link> -- 
+			This mini-project develops your ability to interpret the binary file listing of a standard MIDI file. 
+			First parse the file into its component elements (headers, MIDI messages, meta-events, and delta-times), then analyze your results.
+	 </item>
+<item> <link document="m15054">Mini-Project: Create Standard MIDI Files with LabVIEW</link> -- 
+			In this project, create your own LabVIEW application that can produce a standard MIDI file. 
+			First develop a library of utility subVIs that produce the various components of the file 
+			(header chunk, track chunks, MIDI messages, meta-events, and delta times), as well as a subVI to write 
+			the finished binary file. Next, combine these into a a top-level VI (application) that 
+			creates a complete MIDI file based on an algorithm of your choosing.
+	 </item>
+<item> <link document="m15053">LabVIEW Application: MIDI JamSession</link> --
+			MIDI_JamSession is a LabVIEW application VI that reads a standard MIDI file (.mid format) and renders it to audio using 
+			subVIs called <term>virtual musical instruments</term>  (VMIs) that you design.	
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec16">
+<title>Tremolo and Vibrato Effects (Low-Frequency Modulation)</title>
+
+<list id="list17" list-type="bulleted">
+
+<item> <link document="m15497">Tremolo Effect</link> --
+			Tremolo is a type of low-frequency amplitude modulation. Learn about the vibraphone, a mallet-type percussion instrument 
+			that can create tremolo, experiment with the tremolo effect using an interactive LabVIEW VI, and 
+			learn how to model the tremolo effect mathematically.
+	 </item>
+<item> <link document="m15498">Mini-Project: Vibraphone Virtual Musical Instrument (VMI) in LabVIEW</link> -- 
+			The vibraphone percussion instrument can be well-modeled by a sinusoidal oscillator, an attack-decay envelope with a short 
+			attack and a long decay, and a low-frequency sinusoidal amplitude modulation. In this mini-project, develop code to model the 
+			vibraphone as a LabVIEW "virtual musical instrument" (VMI) that can be "played" by a MIDI music file.
+	 </item>
+<item> <link document="m15496">Vibrato Effect</link> --
+			Vibrato is a type of low-frequency frequency modulation. Learn about vibrato produced by the singing voice and musical instruments, 
+			experiment with the vibrato effect using an interactive LabVIEW VI, and learn how to model the vibrato effect mathematically.
+	 </item>
+<item> <link document="m15500">Mini-Project: "The Whistler" virtual musical instrument (VMI) in LabVIEW</link> -- 
+			An individual who can whistle with vibrato can be well-modeled by a sinusoidal oscillator, an attack-sustain-release envelope 
+			with a moderate attack and release time, and a low-frequency sinusoidal frequency modulation. In this mini-project, develop code 
+			to model the whistler as a LabVIEW "virtual musical instrument" (VMI) to be "played" by a MIDI file.
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec18">
+<title>Modulation Synthesis</title>
+
+<list id="list19" list-type="bulleted">
+
+<item> <link document="m15447">Amplitude Modulation (AM) Mathematics</link> --
+			Amplitude modulation (AM) creates interesting special effects when applied to music and speech signals. 
+			The mathematics of the modulation property of the Fourier transform are presented as the basis for understanding 
+			the AM effect, and several audio demonstrations illustrate the AM effect when applied to simple signals (sinusoids) 
+			and speech signals. The audio demonstration is implemented by a LabVIEW VI using an event structure as the 
+			basis for real-time interactive parameter control.
+	 </item>
+<item> <link document="m15467">Pitch Shifter with Single-Sideband AM</link> -- 
+			Pitch shifting makes an interesting special effect, especially when applied to a speech signal. 
+			Single-sideband amplitude modulation (SSB-AM) is presented as a method to shift the spectrum of a source signal 
+			in the same way as basic AM, but with cancellation of one sideband to eliminate the "dual voice" sound of 
+			conventional AM. Pre-filtering of the source signal to avoid aliasing is also discussed.
+	 </item>
+<item> <link document="m15468">Mini-Project: Ring Modulation and Pitch Shifting</link> --
+			Create a LabVIEW VI to experiment with ring modulation (also called amplitude modulation, or AM), and 
+			develop a LabVIEW VI to shift the pitch of a speech signal using the single-sideband modulation technique.
+	 </item>
+<item> <link document="m15482">Frequency Modulation (FM) Mathematics</link> -- 
+			Frequency modulation (FM) in the audio frequency range can create very rich spectra from only two sinusoidal oscillators, 
+			and the spectra can easily be made to evolve with time. The mathematics of FM synthesis is developed, and the 
+			spectral characteristics of the FM equation are discussed. Audio demonstrations as implemented by LabVIEW VIs illustrate 
+			the relationships between the three fundamental FM synthesis parameters (carrier frequency, modulation frequency, 
+			modulation index) and the synthesized spectra.
+	 </item>
+<item> <link document="m15493">Frequency Modulation (FM) Techniques in LabVIEW</link> -- 
+			Frequency modulation synthesis (FM synthesis) creates a rich spectrum using only two sinusoidal oscillators. 
+			Implementing the basic FM synthesis equation in LabVIEW requires a special technique in order to make one 
+			oscillator vary the phase function of the other oscillator. In this module, learn how to implement the basic FM equation, 
+			and also hear an audio demonstration of the equation in action.
+	 </item>
+<item> <link document="m15494">Chowning FM Synthesis Instruments in LabVIEW</link> -- 
+			John Chowning pioneered frequency modulation (FM) synthesis in the 1970s, and demonstrated how the technique 
+			could simulate a diversity of instruments such as brass, woodwinds, and percussion. FM synthesis produces rich 
+			spectra from only two sinusoidal oscillators, and more interesting sounds can be produced by using a 
+			time-varying modulation index to alter the effective bandwidth and sideband amplitudes over time. 
+			A LabVIEW VI is developed to implement the sound of a clarinet, and the VI can be easily modified to 
+			simulate the sounds of many other instruments.
+	 </item>
+<item> <link document="m15495">Mini-Project: Chowning FM Synthesis Instruments</link> -- 
+			Implement several different Chowning FM instruments (bell, wood drum, brass, clarinet, and bassoon) and 
+			compare them to the sounds of physical instruments. Develop code to model the Chowning algorithms as 
+			LabVIEW "virtual musical instruments" (VMIs) to be "played" by a MIDI file within 
+			<link document="m15053">MIDI JamSession</link>.
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec20">
+<title>Additive Synthesis</title>
+
+<list id="list21" list-type="bulleted">
+
+<item> <link document="m15444">Additive Synthesis Concepts</link> --
+			Additive synthesis creates complex sounds by adding together individual sinusoidal signals called partials. 
+			A partial's frequency and amplitude are each time-varying functions, so a partial is a more flexible version 
+			of the harmonic associated with a Fourier series decomposition of a periodic waveform. 
+			Learn about partials, how to model the timbre of natural instruments, various sources of 
+			control information for partials, and how to make a sinusoidal oscillator with an instantaneous frequency that varies with time.
+	 </item>
+<item> <link document="m15445">Additive Synthesis Techniques</link> -- 
+			Learn how to synthesize audio waveforms by designing the frequency and amplitude trajectories of partials. 
+			LabVIEW programming techniques for additive synthesis will also be introduced in two examples.
+	 </item>
+<item> <link document="m15476">Mini-Project: Risset Bell Synthesis</link> -- 
+			Use additive synthesis to emulate the sound of a bell using a technique described by Jean-Claude Risset, an early pioneer in computer music.
+	 </item>
+<item> <link document="m15446">Mini-Project: Spectrogram Art</link> -- 
+			Create an oscillator whose output tracks a specified amplitude and frequency trajectory, and then define 
+			multiple frequency/amplitude trajectories that can be combined to create complex sounds. 
+			Learn how to design the sound so that its spectrogram makes a recognizable picture.
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec22">
+<title>Subtractive Synthesis</title>
+
+<list id="list23" list-type="bulleted">
+
+<item> <link document="m15456">Subtractive Synthesis Concepts</link> --
+Subtractive synthesis describes a wide range of synthesis techniques that apply a filter (usually time-varying) to a wideband excitation source such as noise or a pulse train. The
+filter shapes the wideband spectrum into the desired spectrum. This excitation/filter technique well-models many types of physical instruments and the human voice. Excitation sources and time-varying digital filters are introduced in this module.
+	 </item>
+<item> <link document="m15477">Interactive Time-Varying Digital Filter in LabVIEW</link> -- 
+			A time-varying digital filter can easily be implemented in LabVIEW, and this module demonstrates the complete process necessary to develop a digital filter that operates in real-time and responds to parameter changes from the front panel controls. An audio demonstration of the finished result includes discussion of practical issues such as eliminating click noise in the output signal.
+	 </item>
+<item> <link document="m15457">Band-Limited Pulse Generator</link> -- 
+			Subtractive synthesis techniques often require a wideband excitation source such as a pulse train to drive a time-varying digital filter. Traditional rectangular pulses have theoretically infinite bandwidth, and therefore always introduce aliasing noise into the input signal. A band-limited pulse (BLP) source is free of aliasing problems, and is more suitable for subtractive synthesis algorithms. The mathematics of the band-limited pulse is presented, and a LabVIEW VI is developed to implement the BLP source. An audio demonstration is included.
+	 </item>
+<item> <link document="m15459">Formant (Vowel) Synthesis</link> -- 
+			Speech and singing contain a mixture of voiced and un-voiced sounds (sibilants like "s"). The spectrum of a voiced sound contains characteristic resonant peaks called formants caused by frequency shaping of the vocal tract. In this module, a formant synthesizer is developed and implemented in LabVIEW. The filter is implemented as a set of parallel two-pole resonators (bandpass filters) that filter a band-limited pulse source.
+	 </item>
+<item> <link document="m15478">Linear Prediction and Cross Synthesis</link> -- 
+			Linear prediction coding (LPC) models a speech signal as a time-varying filter driven by an excitation signal. The time-varying filter coefficients model the vocal tract spectral envelope. "Cross synthesis" is an interesting special effect in which a musical instrument signal drives the digital filter (or vocal tract model), producing the sound of a "singing instrument." The theory and implementation of linear prediction are presented in this module.
+	 </item>
+<item> <link document="m15479">Mini-Project: Linear Prediction and Cross Synthesis</link> -- 
+			Linear prediction is a method used to estimate a time-varying filter, often as a model of a vocal tract. Musical applications of linear prediction substitute various signals as excitation sources for the time-varying filter. This mini-project guides you to develop the basic technique for computing and applying a time-varying filter in LabVIEW. After experimenting with different excitation sources and linear prediction model parameters, you will develop a VI to cross-synthesize a speech signal and a musical signal.
+	 </item>
+<item> <link document="m15489">Karplus-Strong Plucked String Algorithm</link> -- 
+			The Karplus-Strong algorithm plucked string algorithm produces remarkably realistic tones with modest computational effort. The algorithm requires a delay line and lowpass filter arranged in a closed loop, which can be implemented as a single digital filter. The filter is driven by a burst of white noise to initiate the sound of the plucked string. Learn about the Karplus-Strong algorithm and how to implement it as a LabVIEW "virtual musical instrument" (VMI) to be played from a MIDI file using "MIDI JamSession."
+	 </item>
+<item> <link document="m15490">Karplus-Strong Plucked String Algorithm with Improved Pitch Accuracy</link> -- 
+			The basic Karplus-Strong plucked string algorithm must be modified with a continuously adjustable loop delay to produce an arbitrary pitch with high accuracy. An all-pass filter provides a continuously-adjustable fractional delay, and is an ideal device to insert into the closed loop. The delay characteristics of both the lowpass and all-pass filters are explored, and the modified digital filter coefficients are derived. The filter is then implemented as a LabVIEW "virtual musical instrument" (VMI) to be played from a MIDI file using "MIDI JamSession."
+	 </item>
+
+</list>
+
+</section>
+
+<section id="sec24">
+<title>Sound Spatialization</title>
+
+<list id="list25" list-type="bulleted">
+
+<item> <link document="m15471">Reverberation</link> --
+			Reverberation is a property of concert halls that greatly adds to the enjoyment of a musical performance. Sound waves propagate directly from the stage to the listener, and also reflect from the floor, walls, ceiling, and back wall of the stage to create myriad copies of the direct sound that are time-delayed and reduced in intensity. In this module, learn about the concept of reverberation in more detail and ways to emulate reverberation using a digital filter structure known as a comb filter.
+	 </item>
+<item> <link document="m15491">Schroeder Reverberator</link> -- 
+			The Schroeder reverberator uses parallel comb filters followed by cascaded all-pass filters to produce an impulse response that closely resembles a physical reverberant environment. Learn how to implement the Schroeder reverberator block diagram as a digital filter in LabVIEW, and apply the filter to an audio .wav file.
+	 </item>
+<item> <link document="m15475">Localization Cues</link> -- 
+			Learn about two localization cues called interaural intensity difference (IID) and interaural timing difference (ITD), and learn how to create a LabVIEW implementation that places a virtual sound source in a stereo sound field.
+	 </item>
+
+</list>
+
+</section>
+
+</section>
+
+</content>
+</document>
