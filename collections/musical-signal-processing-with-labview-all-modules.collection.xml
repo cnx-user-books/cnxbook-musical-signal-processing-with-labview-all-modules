@@ -1,12 +1,13 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" authors="Sam Shearman">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
     <md:content-id>col10507</md:content-id>
     <md:title>Musical Signal Processing with LabVIEW (All Modules)</md:title>
     <md:language>en</md:language>
     <md:license url="http://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution License</md:license>
     <md:uuid>dfbfc86c-866b-4ab8-9d55-eb1ae266962d</md:uuid>
-<md:slug>musical-signal-processing-with-labview-all-modules</md:slug>
-</metadata>
+    <md:slug>musical-signal-processing-with-labview-all-modules</md:slug>
+  </metadata>
   <col:content>
     <col:module document="m15510"/>
     <col:subcollection>
